@@ -12,3 +12,9 @@ export async function getModelsData() {
   if (error) console.log('query error', error);
   else return data;
 }
+
+export async function getModelById(id) {
+  const { data, error } = await supabase.from('models').select().eq('id',id);
+  if (error) console.log('query error', error);
+  else return data;
+}
