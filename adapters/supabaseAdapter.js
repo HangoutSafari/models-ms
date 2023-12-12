@@ -14,7 +14,7 @@ export async function getModelsData() {
 }
 
 export async function getModelById(id) {
-  const { data, error } = await supabase.from('models').select().eq('id',id);
-  if (error) console.log('query error', error);
+  const { data, error } = await supabase.from('models').select().eq('id',id).single();
+  if (error) return {id:null};
   else return data;
 }
