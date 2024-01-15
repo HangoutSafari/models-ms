@@ -4,10 +4,6 @@ import { getModel, getModels } from '../controllers/modelsViaSupabase.js';
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.json("it's working :3 ");
-});
-
 router.options('/models', (req, res, next) => {
   try {
     res.header({
